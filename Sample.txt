@@ -10,6 +10,7 @@ public class App {
 		// TODO Auto-generated method stub
 System.out.println("Hello World");
 System.out.println("Welcome to Github Intro");
+System.out.println("Happy Learning");
 }
 
 }
