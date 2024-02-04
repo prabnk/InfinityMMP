@@ -1,0 +1,27 @@
+package Practices;
+
+import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
+import java.util.Calendar;
+import java.util.Date;
+
+public class DayoftheWeek {
+
+	public static void main(String[] args) {
+		
+		LocalDate today = LocalDate.now();
+        System.out.println("Is weekend : " + isWeekend(today));
+
+        LocalDate someDate = LocalDate.of(2024, 1, 2); // 2nd-Jan-2021
+        System.out.println("Is weekend : " + isWeekend(someDate));
+	}
+	 public static boolean isWeekend(final LocalDate ld)
+	    {
+	        DayOfWeek day = DayOfWeek.of(ld.get(ChronoField.DAY_OF_WEEK));
+	        return day == DayOfWeek.SUNDAY || day == DayOfWeek.SATURDAY;
+	    }
+	}
+	
+
