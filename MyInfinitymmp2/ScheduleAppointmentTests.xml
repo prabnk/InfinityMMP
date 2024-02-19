@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite">
-  <test thread-count="5" name="SanityTest1">
+ <test thread-count="5" name="Appt_Test1">
   <parameter name="username" value="ria1"/>
   <parameter name="password" value="Ria12345"/>
   <classes>
