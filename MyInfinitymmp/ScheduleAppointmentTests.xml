@@ -5,6 +5,17 @@
   <parameter name="password" value="Ria12345"/>
   <classes>
       <class name="org.iit.healthcare.patientmodule.tests.ScheduleAppointmentDatePicker_Tests"/>
-    </classes>
-  </test> <!-- Test -->
+   </classes>
+   </test>
+    <test name="Test2">
+     <classes>
+       <class name="org.iit.healthcare.patientmodule.tests.ScheduleAppointmentTests"/>
+     </classes>
+   </test>
+   <test name="Test3">
+     <classes>
+       <class name="org.iit.healthcare.patientmodule.tests.EditProfileTests"/>
+     </classes>
+   </test>
+   
 </suite> <!-- Suite -->

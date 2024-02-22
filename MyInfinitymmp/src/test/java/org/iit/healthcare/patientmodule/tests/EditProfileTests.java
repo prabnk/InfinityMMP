@@ -8,29 +8,16 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class EditProfileTests extends BaseClass{
-	//WebDriver driver;
-	 MMPLib mmpLib;
-	/**
-	 * 
-	 * Validate LastName with valid and invalid
-	 * Validate License - 8 Digit Random 
-	 * 
-	 */
-	
-	@BeforeClass
-	public void instantiateDriver()
-	{
-		//WebDriverManager.chromedriver().setup();
-	   // driver = new ChromeDriver();
-	    mmpLib = new MMPLib(driver);
-	}
+	 
 	@Test
 	public void validateEditProfileTest()
 	{
-	     
+		MMPLib mmpLib = new MMPLib(driver);
+	    mmpLib.launchBrowser(mmpProp.getProperty("patienturl"));
 	    mmpLib.loginValidUser(mmpProp.getProperty("patientusername"),mmpProp.getProperty("patientpassword"));
 		boolean result = editFirstName();
 		Assert.assertTrue(result);
@@ -39,17 +26,18 @@ public class EditProfileTests extends BaseClass{
 	public void validateFName_withInvalidData()
 	{
 		 
-	    
+		MMPLib mmpLib = new MMPLib(driver);
+	    mmpLib.launchBrowser(mmpProp.getProperty("patienturl"));
 		  mmpLib.loginValidUser(mmpProp.getProperty("patientusername"),mmpProp.getProperty("patientpassword"));
 		boolean result = editFirstName_withInvalidData();
 		Assert.assertTrue(result);
 	}
 	@Test
-	public void validateEditProfileFiels_NonEditable()
+	public void validateEditProfileFields_NonEditable()
 	{
-		 
-	    
-		  mmpLib.loginValidUser(mmpProp.getProperty("patientusername"),mmpProp.getProperty("patientpassword"));
+	    MMPLib mmpLib = new MMPLib(driver);
+	    mmpLib.launchBrowser(mmpProp.getProperty("patienturl"));
+	    mmpLib.loginValidUser(mmpProp.getProperty("patientusername"),mmpProp.getProperty("patientpassword"));
 		boolean result = editProfile_nonEditableFields();
 		Assert.assertTrue(result);
 	}
@@ -57,7 +45,7 @@ public class EditProfileTests extends BaseClass{
 	{
 		driver.findElement(By.xpath("//span[normalize-space()='Profile']")).click();
 		String actual = driver.findElement(By.id("fname")).getAttribute("readonly");
-		String expected="readonly";
+		String expected="true";
 		return expected.equals(actual);
 	}
 	public boolean editFirstName_withInvalidData()
