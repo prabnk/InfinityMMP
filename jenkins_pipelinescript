@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Ping_InfinityMMP') {
+            steps {
+                bat '''dir
+                ping ww.google.com -n 5
+                ping 96.84.175.78 -n 2'''
+            }
+        }
+        stage('SheduleApp_Test') {
+            steps {
+                git 'https://github.com/prabnk/InfinityMMP'
+                dir('C:\\Users\\prabn\\git\\mmp1\\MyInfinitymmp')
+                {
+                   bat 'mvn clean test'
+                }
+            }
+        }
+    }
+}
