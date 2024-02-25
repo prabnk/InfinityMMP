@@ -107,7 +107,7 @@ public class ScheduleAppointmentTests2 {
 	private String fetchdate(int no_of_days) {
 		Calendar calender = Calendar.getInstance();
 		calender.add(Calendar.DAY_OF_MONTH, no_of_days);
-		SimpleDateFormat sdf = new SimpleDateFormat("MMMM/DD/YYYY");
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/DD/YYYY");
 		String date = sdf.format(calender.getTime());
 		String dateArr[] = date.split("/");
 		Month = dateArr[0];

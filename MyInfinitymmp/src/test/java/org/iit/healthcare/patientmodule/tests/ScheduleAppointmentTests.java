@@ -91,7 +91,7 @@ public class ScheduleAppointmentTests extends BaseClass{
 	public static String getFutureDate(int noofDays)
 	{
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DAY_OF_MONTH, 5);
+		calendar.add(Calendar.DAY_OF_MONTH, 6);
 		Date d =calendar.getTime();
 		SimpleDateFormat sdf = new SimpleDateFormat("d/MMMM/YYYY");
 		String date = sdf.format(d);
